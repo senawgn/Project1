@@ -49,19 +49,49 @@
 
 
 // export default App;
+
+// PROPS
+// import {View, Text, Alert} from 'react-native'
+// import Tombol from './src/components/Tombol'
+
+
+// function App () {
+//     return (
+//         <View>
+//             <Text style={{fontSize: 30, color: 'blue'}}>Hello</Text>
+//             <Tombol title='PRESS ME' onclick={() => console.log('PRESS ME DI TEKAN')} />
+//             <Tombol title='DON:T PRESS' onclick={() => Alert.alert('Warning', 'Kamu menekan Tombol terlarang')}/>
+//             <Tombol title='LOVE ME' onclick={() => Alert.alert('❤️', 'Kamu mencintai ku')}/>
+//             <Tombol title='STRING' />
+//             <Tombol title='NUMBER' />
+            
+//         </View>
+//     )
+// }
+
+// export default App
+
 import {View, Text, Alert} from 'react-native'
 import Tombol from './src/components/Tombol'
+import { useState } from 'react';
 
 
 function App () {
+    const [count , setCount] = useState(0);
+
     return (
         <View>
-            <Text style={{fontSize: 30, color: 'blue'}}>Hello</Text>
-            <Tombol title='PRESS ME' onclick={() => console.log('PRESS ME DI TEKAN')} />
-            <Tombol title='DON:T PRESS' onclick={() => Alert.alert('Warning', 'Kamu menekan Tombol terlarang')}/>
-            <Tombol title='LOVE ME' onclick={() => Alert.alert('❤️', 'Kamu mencintai ku')}/>
-            <Tombol title='STRING' />
-            <Tombol title='NUMBER' />
+            <Tombol title='TAMBAH (+)' onclick={() => {
+                console.log('PRESS ME DI TEKAN')
+                setCount(count + 1)
+            }} />
+                <Text style={{color: "#333" , textAlign:"center" ,  fontSize:50}}>{count}</Text>
+            <Tombol title='KURANG (-)'onclick={() => {
+                console.log('PRESS ME DI TEKAN')
+                 count <= 0 ? setCount(count - 0) : setCount(count - 1)}} />
+            <Tombol title='RESET (C)'onclick={() => {
+                console.log('PRESS ME DI TEKAN')
+                setCount(0)}} />
             
         </View>
     )

@@ -1,10 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 
 let Tombol = ({title,onclick}) => {
     return (
         <TouchableOpacity onPress={onclick} style={style.container}>
-            <Text style={{color: 'white'}}>{title}</Text>
+            <Text style={{color: 'white', fontSize: 25}}>{title}</Text>
         </TouchableOpacity>
     )
 }
@@ -13,8 +13,9 @@ let style = StyleSheet.create({
     container: {
         padding: 20,
         margin: 20,
-        backgroundColor: 'red',
-        borderRadius: 10,
+        backgroundColor: 'blue',
+        borderTopEndRadius:20,
+        borderBottomStartRadius:20,
         alignItems: 'center',
         elevation: 3
     }
