@@ -12,39 +12,59 @@
 // fontSize
 // fontWeight
 
-import { Text , View, Image, TextInput, ScrollView, StyleSheet } from "react-native";
+// import { Text , View, Image, TextInput, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 
-function App() {
-    return (
-        <ScrollView ShowsVerticalScrollIndicator= {false}>
-            <Text style={{color : "#0066ff", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Sena Ganteng</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
-            <Image style={{width: 200, height:200}} source={{ uri: "https://i.pinimg.com/564x/d7/80/50/d78050127adffd498add0b94ae0e878c.jpg"}}/>
-            <Image style={{width: 200, height:200}} source={require('./src/assets/images/spide-man.jpg')} />
 
-            <TextInput 
-                placeholder="Enter Your Name"
-                secureTextEntry
-                keyboardType="phone-pad"
+// function App() {
+//     return (
+//         <ScrollView ShowsVerticalScrollIndicator= {false}>
+//             <Text style={{color : "#0066ff", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Sena Ganteng</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Text style={{color : "#08b3fc", fontSize: 30, fontStyle: "italic", fontWeight: "bold", fontFamily: "serif"}}>Pasti dong</Text>
+//             <Image style={{width: 200, height:200}} source={{ uri: "https://i.pinimg.com/564x/d7/80/50/d78050127adffd498add0b94ae0e878c.jpg"}}/>
+//             <Image style={{width: 200, height:200}} source={require('./src/assets/images/spide-man.jpg')} />
+
+//             <TextInput 
+//                 placeholder="Enter Your PIN"
+//                 secureTextEntry
+//                 keyboardType="phone-pad"
             
-            />
+//             />
 
-        </ScrollView>
+//         </ScrollView>
+//     )
+// }
+// let styles = StyleSheet.create({
+//         image: {width: 200, height: 200}
+// })
+
+
+// export default App;
+import {View, Text, Alert} from 'react-native'
+import Tombol from './src/components/Tombol'
+
+
+function App () {
+    return (
+        <View>
+            <Text style={{fontSize: 30, color: 'blue'}}>Hello</Text>
+            <Tombol title='PRESS ME' onclick={() => console.log('PRESS ME DI TEKAN')} />
+            <Tombol title='DON:T PRESS' onclick={() => Alert.alert('Warning', 'Kamu menekan Tombol terlarang')}/>
+            <Tombol title='LOVE ME' onclick={() => Alert.alert('❤️', 'Kamu mencintai ku')}/>
+            <Tombol title='STRING' />
+            <Tombol title='NUMBER' />
+            
+        </View>
     )
 }
-let styles = StyleSheet.create({
-        image: {width: 200, height: 200}
-})
 
-
-export default App;
+export default App
