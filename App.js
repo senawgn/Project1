@@ -82,15 +82,15 @@ function App () {
     return (
         <View>
             <Tombol title='TAMBAH (+)' onclick={() => {
-                console.log('PRESS ME DI TEKAN')
+                console.log('BERTAMBAH +1')
                 setCount(count + 1)
             }} />
                 <Text style={{color: "#333" , textAlign:"center" ,  fontSize:50}}>{count}</Text>
             <Tombol title='KURANG (-)'onclick={() => {
-                console.log('PRESS ME DI TEKAN')
+                console.log('BERKURANG -1')
                  count <= 0 ? setCount(count - 0) : setCount(count - 1)}} />
             <Tombol title='RESET (C)'onclick={() => {
-                console.log('PRESS ME DI TEKAN')
+                console.log('KEMBALI KE 0')
                 setCount(0)}} />
             
         </View>
