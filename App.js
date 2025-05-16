@@ -71,28 +71,44 @@
 
 // export default App
 
-import {View, Text, Alert} from 'react-native'
+import {View, Text, Alert, Switch, TextInput} from 'react-native'
 import Tombol from './src/components/Tombol'
-import { useState } from 'react';
+import { useState } from 'react'
 
 
 function App () {
     const [count , setCount] = useState(0);
-
+    const [isEnabled, setIsEnabled] = useState(false)
+    const [Password, setPassword] = useState(true)
     return (
         <View>
             <Tombol title='TAMBAH (+)' onclick={() => {
-                console.log('BERTAMBAH +1')
-                setCount(count + 1)
-            }} />
-                <Text style={{color: "#333" , textAlign:"center" ,  fontSize:50}}>{count}</Text>
+                console.log('BERTAMBAH')
+                setCount(count + 1)}} />
+                <Text style={{color: "#000" , textAlign:"center" ,  fontSize:50}}>{count}</Text>
             <Tombol title='KURANG (-)'onclick={() => {
-                console.log('BERKURANG -1')
+                console.log('BERKURANG')
                  count <= 0 ? setCount(count - 0) : setCount(count - 1)}} />
             <Tombol title='RESET (C)'onclick={() => {
                 console.log('KEMBALI KE 0')
                 setCount(0)}} />
             
+
+            <Switch
+                trackColor={{false: '#767577', true: '#81b0ff'}}
+                value={isEnabled}
+                thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                onValueChange={() => setIsEnabled(!isEnabled)}
+            />
+
+
+            {/* <TextInput
+                placeholder='Enter Your Password'
+                placeholderTextColor={isEnabled ? 'blue':'#777'} style={{fontSize: 20,}}
+                secureTextEntry={!isEnabled}
+                onChangeText={e => setPassword(e)}
+                value={Password}
+            /> */}
         </View>
     )
 }
