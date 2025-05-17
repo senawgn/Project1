@@ -13,7 +13,6 @@ let style = StyleSheet.create({
     container: {
         padding: 20,
         margin: 20,
-        backgroundColor: 'blue',
         borderTopEndRadius:20,
         borderBottomStartRadius:20,
         alignItems: 'center',
